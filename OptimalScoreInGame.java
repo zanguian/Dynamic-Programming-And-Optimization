@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class OptimalScoreInGame{
     public static void main(String[] args){
 
@@ -15,7 +14,7 @@ public class OptimalScoreInGame{
         System.out.print("\n");
 
         String[] listOfItems = listOfItemsAsString.split(",");
-        String[][] myArray = new String[numOfItems][numOfItems];
+        String[][] chartOfOptimalChoices = new String[numOfItems][numOfItems];
 
         if(listOfItems.length != numOfItems){
 
@@ -27,15 +26,15 @@ public class OptimalScoreInGame{
 
         if(numOfItems > 1){
 
-            crossOutTrivialCells(myArray);
+            crossOutTrivialCells(chartOfOptimalChoices);
 
         }
 
-        baseCase(myArray, listOfItems);
+        baseCase(chartOfOptimalChoices, listOfItems);
 
         if(numOfItems > 1){
 
-            myDynamicProgrammingAlgorithm(myArray, listOfItems);
+            myDynamicProgrammingAlgorithm(chartOfOptimalChoices, listOfItems);
 
         }
 
@@ -44,7 +43,7 @@ public class OptimalScoreInGame{
 
             for(int k=0; k<numOfItems; k++){
 
-                System.out.print(String.format("%20s", myArray[j][k]));
+                System.out.print(String.format("%20s", chartOfOptimalChoices[j][k]));
 
             }
 
