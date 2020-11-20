@@ -75,8 +75,6 @@ public class OptimalScoreInGame{
 
             myArray[j][k] = list[j] + " F or L";
 
-            
-
             }
         }
     
